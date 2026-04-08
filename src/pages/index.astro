@@ -1,0 +1,66 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const links = [
+  { label: 'email', href: 'mailto:jiahuipeng@caltech.edu' },
+  { label: 'github', href: 'https://github.com/jiahui-peng' },
+  { label: 'twitter', href: 'https://x.com/Jiahui_P' },
+  { label: 'lab', href: 'https://theloislab.com' },
+];
+---
+
+<Layout title="Jiahui Peng">
+  <div class="flex flex-col">
+    <img
+      src="/prof_pic.jpeg"
+      alt="Jiahui Peng"
+      width="160"
+      height="160"
+      class="h-40 w-40 rounded-full object-cover ring-1 ring-neutral-200 dark:ring-neutral-800"
+    />
+
+    <h1
+      class="mt-8 text-2xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-50"
+    >
+      Jiahui Peng
+      <span class="ml-1 font-normal text-neutral-500 dark:text-neutral-400"
+        >彭嘉慧</span
+      >
+    </h1>
+
+    <p class="mt-1 text-neutral-500 dark:text-neutral-400">
+      PhD Student ·
+      <a
+        href="https://theloislab.com"
+        class="underline-offset-4 transition-colors hover:text-neutral-900 hover:underline dark:hover:text-neutral-100"
+        >Lois Lab</a
+      > · Caltech
+    </p>
+
+    <div
+      class="mt-8 space-y-4 leading-relaxed text-neutral-700 dark:text-neutral-300"
+    >
+      <p>
+        I study the neural basis of singing behavior in songbirds, asking how
+        neural circuits learn, maintain, and execute complex motor sequences.
+      </p>
+      <p>
+        Before Caltech, I studied life sciences at Peking University. I grew up
+        in Xi'an, China.
+      </p>
+    </div>
+
+    <nav class="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+      {
+        links.map(({ label, href }) => (
+          <a
+            href={href}
+            class="text-neutral-500 underline-offset-4 transition-colors hover:text-neutral-900 hover:underline dark:text-neutral-400 dark:hover:text-neutral-100"
+          >
+            {label}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+</Layout>
