@@ -32,14 +32,14 @@ import Layout from '../layouts/Layout.astro';
       <div class="relative z-10 px-8 py-12 sm:px-12 lg:px-16">
         <div class="mx-auto w-full max-w-md">
           <!-- Mobile: show photo as circle -->
-          <a href="/prof_pic.jpeg" target="_blank" class="mb-8 block lg:hidden">
+          <a href="/prof_pic.jpeg" target="_blank" class="mb-8 block overflow-hidden rounded-full lg:hidden" style="width: 160px; height: 160px">
             <img
               src="/prof_pic.jpeg"
               alt="Jiahui Peng"
-              width="192"
-              height="192"
-              class="h-48 w-48 rounded-full object-cover ring-1 ring-white/20"
-              style="object-position: center 25%; transform: scale(1.3); transform-origin: center 25%"
+              width="160"
+              height="160"
+              class="h-full w-full object-cover ring-1 ring-white/20"
+              style="object-position: center 22%; transform: scale(1.8); transform-origin: center 22%"
             />
           </a>
 
