@@ -4,10 +4,49 @@ interface Props {
   description?: string;
 }
 
+const siteUrl = 'https://jiahui-peng.github.io';
 const {
   title,
   description = "Jiahui Peng — PhD student in Carlos Lois's lab at Caltech, studying the neural basis of singing behavior in songbirds.",
 } = Astro.props;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Jiahui Peng",
+  "alternateName": "彭嘉慧",
+  "url": siteUrl,
+  "image": `${siteUrl}/prof_pic.jpeg`,
+  "jobTitle": "PhD Student",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "California Institute of Technology",
+    "alternateName": "Caltech",
+    "url": "https://www.caltech.edu/"
+  },
+  "affiliation": [
+    {
+      "@type": "Organization",
+      "name": "Division of Biology and Biological Engineering",
+      "url": "https://www.bbe.caltech.edu/"
+    },
+    {
+      "@type": "Organization",
+      "name": "Tianqiao and Chrissy Chen Institute for Neuroscience",
+      "url": "https://neuroscience.caltech.edu/"
+    }
+  ],
+  "alumniOf": {
+    "@type": "Organization",
+    "name": "Peking University"
+  },
+  "knowsAbout": ["neuroscience", "songbird", "zebra finch", "neural imaging", "motor learning", "single-cell epigenomics"],
+  "sameAs": [
+    "https://scholar.google.com/citations?user=vfZVmZ0AAAAJ",
+    "https://github.com/jiahui-peng",
+    "https://x.com/Jiahui_P"
+  ]
+};
 ---
 
 <!doctype html>
@@ -17,10 +56,25 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
+    <link rel="canonical" href={siteUrl} />
+
+    <!-- Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="/prof_pic.jpeg" />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:image" content={`${siteUrl}/prof_pic.jpeg`} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Jiahui_P" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${siteUrl}/prof_pic.jpeg`} />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
     <link
       rel="icon"
       href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐦</text></svg>"
