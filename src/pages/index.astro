@@ -14,9 +14,6 @@ import Layout from '../layouts/Layout.astro';
           style="object-position: center 30%"
         />
       </a>
-      <p class="absolute bottom-4 left-4 text-xs text-white/60">
-        Hurricane Ridge, Olympic National Park · Photo by <a href="https://xinmingtu.cn/" class="underline underline-offset-2 transition-colors hover:text-white/90">Xinming</a>
-      </p>
     </div>
 
     <!-- Right: frosted glass with same photo blurred underneath -->
@@ -30,6 +27,13 @@ import Layout from '../layouts/Layout.astro';
       />
       <!-- Semi-transparent overlay for readability -->
       <div class="absolute inset-0 bg-neutral-950/75"></div>
+
+      <!-- Photo credit -->
+      <p class="absolute bottom-5 right-6 z-10 hidden text-right text-xs leading-relaxed text-neutral-500 lg:block">
+        Hurricane Ridge<br />
+        Olympic National Park<br />
+        Photo by <a href="https://xinmingtu.cn/" class="underline underline-offset-2 transition-colors hover:text-neutral-300">Xinming</a>
+      </p>
 
       <!-- Content -->
       <div class="relative z-10 px-8 py-12 sm:px-12 lg:px-16">
