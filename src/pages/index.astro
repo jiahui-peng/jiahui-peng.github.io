@@ -3,9 +3,9 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Jiahui Peng">
-  <div class="flex min-h-screen flex-col lg:flex-row">
+  <div class="flex h-screen flex-col overflow-hidden lg:flex-row">
     <!-- Left: Photo with gradient fade -->
-    <div class="relative hidden lg:block lg:w-1/2">
+    <div class="relative hidden lg:block lg:w-[35%]">
       <a href="/prof_pic.jpeg" target="_blank" class="block h-full">
         <img
           src="/prof_pic.jpeg"
@@ -22,7 +22,7 @@ import Layout from '../layouts/Layout.astro';
 
     <!-- Right: Content -->
     <div
-      class="flex w-full flex-col justify-center px-8 py-16 sm:px-12 lg:w-1/2 lg:px-16"
+      class="flex w-full flex-col justify-center px-8 py-12 sm:px-12 lg:w-[65%] lg:px-20"
     >
       <!-- Mobile: show photo as circle -->
       <a href="/prof_pic.jpeg" target="_blank" class="mb-8 block lg:hidden">
