@@ -4,19 +4,7 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Jiahui Peng">
   <div class="flex h-screen flex-col overflow-hidden lg:flex-row">
-    <!-- Left: clear photo, original size -->
-    <div class="relative hidden lg:block lg:w-[35%]">
-      <a href="/prof_pic.jpeg" target="_blank" class="block h-full">
-        <img
-          src="/prof_pic.jpeg"
-          alt="Jiahui Peng"
-          class="h-full w-full object-cover"
-          style="object-position: center 30%"
-        />
-      </a>
-    </div>
-
-    <!-- Right: frosted glass with same photo blurred underneath -->
+    <!-- Left: frosted glass with blurred mountain underneath -->
     <div class="relative flex w-full flex-col justify-center overflow-hidden lg:w-[65%]">
       <!-- Blurred mountain as backdrop -->
       <img
@@ -28,8 +16,8 @@ import Layout from '../layouts/Layout.astro';
       <!-- Semi-transparent overlay for readability -->
       <div class="absolute inset-0 bg-neutral-950/75"></div>
 
-      <!-- Photo credit -->
-      <p class="absolute bottom-5 left-6 z-10 hidden text-left text-xs leading-relaxed text-neutral-500 lg:block">
+      <!-- Photo credit at bottom-right, next to photo -->
+      <p class="absolute bottom-5 right-6 z-10 hidden text-right text-xs leading-relaxed text-neutral-500 lg:block">
         Hurricane Ridge<br />
         Olympic National Park<br />
         Photo by <a href="https://xinmingtu.cn/" class="underline underline-offset-2 transition-colors hover:text-neutral-300">Xinming</a>
@@ -110,6 +98,18 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- Right: clear photo, original size -->
+    <div class="relative hidden lg:block lg:w-[35%]">
+      <a href="/prof_pic.jpeg" target="_blank" class="block h-full">
+        <img
+          src="/prof_pic.jpeg"
+          alt="Jiahui Peng"
+          class="h-full w-full object-cover"
+          style="object-position: center 30%"
+        />
+      </a>
     </div>
   </div>
 </Layout>
