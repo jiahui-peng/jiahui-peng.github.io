@@ -11,7 +11,7 @@ const {
 ---
 
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -33,11 +33,7 @@ const {
     />
     <title>{title}</title>
   </head>
-  <body
-    class="bg-white text-neutral-800 antialiased selection:bg-neutral-900 selection:text-white dark:bg-neutral-950 dark:text-neutral-200 dark:selection:bg-neutral-100 dark:selection:text-neutral-900"
-  >
-    <main class="mx-auto max-w-xl px-6 py-16 sm:py-24">
-      <slot />
-    </main>
+  <body class="bg-neutral-950 font-sans antialiased">
+    <slot />
   </body>
 </html>

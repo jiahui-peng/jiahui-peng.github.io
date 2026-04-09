@@ -1,92 +1,102 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
 ---
 
 <Layout title="Jiahui Peng">
-  <div class="flex flex-col">
-    <!-- Header: photo left, info right -->
-    <div class="flex flex-col sm:flex-row sm:items-start sm:gap-8">
-      <a href="/prof_pic.jpeg" target="_blank" class="shrink-0">
+  <div class="flex min-h-screen flex-col lg:flex-row">
+    <!-- Left: Photo with gradient fade -->
+    <div class="relative hidden lg:block lg:w-1/2">
+      <a href="/prof_pic.jpeg" target="_blank" class="block h-full">
         <img
           src="/prof_pic.jpeg"
           alt="Jiahui Peng"
-          width="192"
-          height="192"
-          class="h-48 w-48 rounded-full object-cover ring-1 ring-neutral-200 dark:ring-neutral-800 transition-opacity hover:opacity-90"
+          class="h-full w-full object-cover"
+          style="object-position: center 30%"
+        />
+      </a>
+      <div
+        class="pointer-events-none absolute inset-0 bg-gradient-to-r from-transparent from-40% to-neutral-950"
+      >
+      </div>
+    </div>
+
+    <!-- Right: Content -->
+    <div
+      class="flex w-full flex-col justify-center px-8 py-16 sm:px-12 lg:w-1/2 lg:px-16"
+    >
+      <!-- Mobile: show photo as circle -->
+      <a href="/prof_pic.jpeg" target="_blank" class="mb-8 block lg:hidden">
+        <img
+          src="/prof_pic.jpeg"
+          alt="Jiahui Peng"
+          width="160"
+          height="160"
+          class="h-40 w-40 rounded-full object-cover ring-1 ring-neutral-800"
           style="object-position: center 30%"
         />
       </a>
 
-      <div class="mt-6 sm:mt-2">
-        <h1
-          class="text-2xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-50"
+      <h1
+        class="text-3xl font-semibold tracking-tight text-neutral-50"
+      >
+        Jiahui Peng
+        <span class="ml-1 font-normal text-neutral-500">彭嘉慧</span>
+      </h1>
+
+      <p class="mt-2 text-neutral-400">
+        PhD Student ·
+        <a
+          href="https://www.bbe.caltech.edu/"
+          class="underline-offset-4 transition-colors hover:text-neutral-100 hover:underline"
+          >BBE</a
+        > ·
+        <a
+          href="https://neuroscience.caltech.edu/"
+          class="underline-offset-4 transition-colors hover:text-neutral-100 hover:underline"
+          >Chen Institute</a
+        > ·
+        <a
+          href="https://www.caltech.edu/"
+          class="underline-offset-4 transition-colors hover:text-neutral-100 hover:underline"
+          >Caltech</a
         >
-          Jiahui Peng
-          <span class="ml-1 font-normal text-neutral-500 dark:text-neutral-400"
-            >彭嘉慧</span
-          >
-        </h1>
+      </p>
 
-        <p class="mt-1 text-neutral-500 dark:text-neutral-400">
-          PhD Student ·
-          <a
-            href="https://www.bbe.caltech.edu/"
-            class="underline-offset-4 transition-colors hover:text-neutral-900 hover:underline dark:hover:text-neutral-100"
-            >BBE</a
-          > ·
-          <a
-            href="https://neuroscience.caltech.edu/"
-            class="underline-offset-4 transition-colors hover:text-neutral-900 hover:underline dark:hover:text-neutral-100"
-            >Chen Institute</a
-          > ·
-          <a
-            href="https://www.caltech.edu/"
-            class="underline-offset-4 transition-colors hover:text-neutral-900 hover:underline dark:hover:text-neutral-100"
-            >Caltech</a
-          >
+      <nav class="mt-5 flex flex-wrap items-center gap-x-5 gap-y-3">
+        <a href="mailto:jiahuipeng@caltech.edu" aria-label="Email" title="Email" class="text-neutral-500 transition-colors hover:text-neutral-100">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        </a>
+        <a href="https://scholar.google.com/citations?user=vfZVmZ0AAAAJ" aria-label="Google Scholar" title="Google Scholar" class="text-neutral-500 transition-colors hover:text-neutral-100">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M5.242 13.769 0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.978 0-5.548 1.749-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
+        </a>
+        <a href="https://github.com/jiahui-peng" aria-label="GitHub" title="GitHub" class="text-neutral-500 transition-colors hover:text-neutral-100">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+        <a href="https://x.com/Jiahui_P" aria-label="X (Twitter)" title="X (Twitter)" class="text-neutral-500 transition-colors hover:text-neutral-100">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+        </a>
+      </nav>
+
+      <div class="mt-10 max-w-lg space-y-4 leading-relaxed text-neutral-300">
+        <p>
+          I study the neural basis of singing behavior in songbirds, asking how
+          neural circuits learn, maintain, and execute complex motor sequences. In
+          my PhD work with <a href="https://theloislab.com/" class="text-neutral-200 underline-offset-4 transition-colors hover:text-white hover:underline">Carlos Lois</a>
+          at Caltech, I use neural imaging in freely singing zebra finches to
+          investigate how neural representations of song are more variable
+          &mdash; and more interesting &mdash; than previously assumed.
         </p>
-
-        <nav class="mt-4 flex flex-wrap items-center gap-x-5 gap-y-3">
-          <a href="mailto:jiahuipeng@caltech.edu" aria-label="Email" title="Email" class="text-neutral-400 transition-colors hover:text-neutral-900 dark:text-neutral-500 dark:hover:text-neutral-100">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-          </a>
-          <a href="https://scholar.google.com/citations?user=vfZVmZ0AAAAJ" aria-label="Google Scholar" title="Google Scholar" class="text-neutral-400 transition-colors hover:text-neutral-900 dark:text-neutral-500 dark:hover:text-neutral-100">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M5.242 13.769 0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.978 0-5.548 1.749-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
-          </a>
-          <a href="https://github.com/jiahui-peng" aria-label="GitHub" title="GitHub" class="text-neutral-400 transition-colors hover:text-neutral-900 dark:text-neutral-500 dark:hover:text-neutral-100">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-          </a>
-          <a href="https://x.com/Jiahui_P" aria-label="X (Twitter)" title="X (Twitter)" class="text-neutral-400 transition-colors hover:text-neutral-900 dark:text-neutral-500 dark:hover:text-neutral-100">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
-          </a>
-        </nav>
+        <p>
+          I am broadly interested in the computational principles of intelligence
+          across biological and artificial systems.
+        </p>
+        <p>
+          Before coming to Caltech, I studied single-cell epigenomics with
+          <a href="https://sunneyxielab.org/" class="text-neutral-200 underline-offset-4 transition-colors hover:text-white hover:underline">Xiaoliang Sunney Xie</a>
+          at Peking University.
+        </p>
+        <p>I grew up in Xi'an, China.</p>
       </div>
     </div>
-
-    <!-- Bio -->
-    <div
-      class="mt-10 space-y-4 leading-relaxed text-neutral-700 dark:text-neutral-300"
-    >
-      <p>
-        I study the neural basis of singing behavior in songbirds, asking how
-        neural circuits learn, maintain, and execute complex motor sequences. In
-        my PhD work with <a href="https://theloislab.com/" class="underline-offset-4 transition-colors hover:text-neutral-900 hover:underline dark:hover:text-neutral-100">Carlos Lois</a>
-        at Caltech, I use neural imaging in freely singing zebra finches to
-        investigate how neural representations of song are more variable
-        &mdash; and more interesting &mdash; than previously assumed.
-      </p>
-      <p>
-        I am broadly interested in the computational principles of intelligence
-        across biological and artificial systems.
-      </p>
-      <p>
-        Before coming to Caltech, I studied single-cell epigenomics with
-        <a href="https://sunneyxielab.org/" class="underline-offset-4 transition-colors hover:text-neutral-900 hover:underline dark:hover:text-neutral-100">Xiaoliang Sunney Xie</a>
-        at Peking University.
-      </p>
-      <p>I grew up in Xi'an, China.</p>
-    </div>
-
   </div>
 </Layout>
