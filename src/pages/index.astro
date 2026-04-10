@@ -100,7 +100,10 @@ import Layout from '../layouts/Layout.astro';
     </div>
 
     <!-- Right: clear photo, original size -->
-    <div class="sticky top-0 hidden h-screen overflow-hidden lg:block lg:w-[35%]">
+    <!-- Spacer to preserve layout flow for the right 35% -->
+    <div class="hidden lg:block lg:w-[35%]"></div>
+    <!-- Fixed photo pinned to viewport -->
+    <div class="fixed right-0 top-0 hidden h-screen overflow-hidden lg:block lg:w-[35%]">
       <a href="/prof_pic.jpeg" target="_blank" class="block h-full">
         <img
           src="/prof_pic.jpeg"
