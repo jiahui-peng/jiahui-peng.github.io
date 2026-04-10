@@ -5,7 +5,7 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="Jiahui Peng">
   <div class="flex min-h-screen flex-col lg:flex-row">
     <!-- Left: frosted glass with blurred mountain underneath -->
-    <div class="relative flex w-full flex-col justify-center overflow-hidden lg:w-[65%]">
+    <div class="relative z-10 flex w-full flex-col justify-center overflow-hidden lg:w-[65%]" style="box-shadow: 8px 0 24px rgba(0,0,0,0.5)">
       <!-- Blurred mountain as backdrop -->
       <img
         src="/bg_mountain.jpeg"
@@ -114,8 +114,6 @@ import Layout from '../layouts/Layout.astro';
           style="object-position: center 30%"
         />
       </a>
-      <!-- Narrow gradient blending into the glass panel -->
-      <div class="pointer-events-none absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-neutral-950/50 to-transparent"></div>
     </div>
   </div>
 
