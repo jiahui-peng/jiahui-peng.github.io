@@ -3,9 +3,12 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Jiahui Peng">
-  <!-- Fixed blurred mountain backdrop (stays in place on scroll) -->
+  <!-- Fixed blurred backdrops (stay in place on scroll) -->
+  <!-- Left: blurred mountain -->
   <div class="pointer-events-none fixed inset-0 z-0 scale-125 blur-2xl" style="background: url('/bg_mountain.jpeg') center/cover"></div>
   <div class="pointer-events-none fixed inset-0 z-0 bg-neutral-950/60"></div>
+  <!-- Right: blurred photo as edge extension -->
+  <div class="pointer-events-none fixed right-0 top-0 z-[1] hidden h-screen scale-110 blur-2xl lg:block lg:w-[35%]" style="background: url('/prof_pic.jpeg') center 30%/cover"></div>
 
   <div class="relative z-10 flex min-h-[101vh] flex-col lg:flex-row">
     <!-- Left: frosted glass -->
@@ -99,11 +102,8 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
 
-    <!-- Right: clear photo, original size -->
-    <!-- Spacer to preserve layout flow for the right 35% -->
-    <div class="hidden lg:block lg:w-[35%]"></div>
-    <!-- Fixed photo pinned to viewport -->
-    <div class="fixed right-0 top-0 hidden h-screen overflow-hidden lg:block lg:w-[35%]">
+    <!-- Right: photo (scrolls with content, blurred version fixed behind) -->
+    <div class="relative z-[2] hidden overflow-hidden lg:block lg:w-[35%]">
       <a href="/prof_pic.jpeg" target="_blank" class="block h-full">
         <img
           src="/prof_pic.jpeg"
