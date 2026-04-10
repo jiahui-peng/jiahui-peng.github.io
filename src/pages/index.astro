@@ -3,16 +3,13 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Jiahui Peng">
-  <div class="flex min-h-[101vh] flex-col lg:flex-row">
-    <!-- Left: frosted glass with blurred mountain underneath -->
-    <div class="relative z-10 flex w-full flex-col justify-center overflow-hidden lg:w-[65%]" style="box-shadow: 8px 0 24px rgba(0,0,0,0.5)">
-      <!-- Fixed blurred mountain backdrop -->
-      <div
-        class="pointer-events-none absolute inset-0 scale-125 blur-2xl"
-        style="background: url('/bg_mountain.jpeg') center/cover fixed"
-      ></div>
-      <!-- Semi-transparent overlay for readability -->
-      <div class="absolute inset-0 bg-neutral-950/60"></div>
+  <!-- Fixed blurred mountain backdrop (stays in place on scroll) -->
+  <div class="pointer-events-none fixed inset-0 z-0 scale-125 blur-2xl" style="background: url('/bg_mountain.jpeg') center/cover"></div>
+  <div class="pointer-events-none fixed inset-0 z-0 bg-neutral-950/60"></div>
+
+  <div class="relative z-10 flex min-h-[101vh] flex-col lg:flex-row">
+    <!-- Left: frosted glass -->
+    <div class="relative flex w-full flex-col justify-center lg:w-[65%]" style="box-shadow: 8px 0 24px rgba(0,0,0,0.5)">
 
       <!-- Photo credit at bottom-right, next to photo -->
       <p class="absolute bottom-5 right-6 z-10 hidden text-right text-xs leading-relaxed text-neutral-500 lg:block">
