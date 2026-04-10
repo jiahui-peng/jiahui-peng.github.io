@@ -6,13 +6,11 @@ import Layout from '../layouts/Layout.astro';
   <div class="flex min-h-screen flex-col lg:flex-row">
     <!-- Left: frosted glass with blurred mountain underneath -->
     <div class="relative z-10 flex w-full flex-col justify-center overflow-hidden lg:w-[65%]" style="box-shadow: 8px 0 24px rgba(0,0,0,0.5)">
-      <!-- Blurred mountain as backdrop -->
-      <img
-        src="/bg_mountain.jpeg"
-        alt=""
-        aria-hidden="true"
-        class="pointer-events-none absolute inset-0 h-full w-full scale-125 object-cover blur-2xl"
-      />
+      <!-- Fixed blurred mountain backdrop -->
+      <div
+        class="pointer-events-none absolute inset-0 scale-125 blur-2xl"
+        style="background: url('/bg_mountain.jpeg') center/cover fixed"
+      ></div>
       <!-- Semi-transparent overlay for readability -->
       <div class="absolute inset-0 bg-neutral-950/75"></div>
 
